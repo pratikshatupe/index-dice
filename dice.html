@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        width:400px; 
+        border:4px double #ff5833;
+        border-radius: 10px;
+        display:block;
+        margin: 30px auto;
+        background-color: #f0e6ff;
+    }
+    .heading{
+        text-align: center;
+        color: #f533ff;
+    }
+    .img-dice{
+        width:200px;
+        display:block;
+        margin:20px auto;
+    }
+    .btn-roll{
+        display: block;
+        margin: 20px auto;
+        background-color: #d633ff;
+        color: white;
+        font-size: 20px;
+        padding: 10px 40px;
+        border-radius: 50px;
+        border: hidden;
+        cursor: pointer;
+        margin-top: 30px; 
+    }
+</style>
+<body>
+    <div class="container">
+        <h1 class="heading">Dice Roller</h1>
+        <img src="./img/one.png" alt="" class="img-dice" id="img-dice"/>
+        <button type="button" class="btn-roll" onclick="rollDice()">Roll Dice</button>
+    </div>
+    <script>
+        function rollDice() {
+            const min = 1;
+            const max = 6;
+            const randomNum = Math.floor(Math.random() * (max - min + 1)) + min; // Corrected line
+
+            const diceImg = document.getElementById('img-dice');
+            if (randomNum == 1) {
+                diceImg.src = './img/one.png'; // Added './img/' prefix
+            } else if (randomNum == 2) {
+                diceImg.src = './img/two.png'; // Added './img/' prefix
+            } else if (randomNum == 3) {
+                diceImg.src = './img/three.png'; // Added './img/' prefix
+            } else if (randomNum == 4) {
+                diceImg.src = './img/four.png'; // Added './img/' prefix
+            } else if (randomNum == 5) {
+                diceImg.src = './img/five.png'; // Added './img/' prefix
+            } else if (randomNum == 6) {
+                diceImg.src = './img/six.png'; // Added './img/' prefix
+            }
+        }
+    </script>
+</body>
+</html>
